@@ -68,7 +68,7 @@ const PostForm = ({ post }) => {
         setValue('slug', slugTransform(value.title), { shouldValidate: true });
       }
     });
-
+    /* The useEffect hook can also return a cleanup function. In this case, it is unsubscribing from the subscription created by the watch function. This is a common pattern when working with event subscriptions to prevent memory leaks. */
     return () => {
       subscription.unsubscribe();
     };
